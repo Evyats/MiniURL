@@ -1,0 +1,2 @@
+
+open in each vscode one repo at a time - opened on the correct interpreter and venv.
