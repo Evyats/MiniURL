@@ -1,5 +1,5 @@
 from datetime import datetime, timezone
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from pydantic import BaseModel
 import id_generator
 import database
@@ -11,6 +11,19 @@ class LongUrl(BaseModel):
     
 
 app = FastAPI()
+
+
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    """ logging the whole request:
+    body = await request.body()
+    print(f"REQUEST: {request.method} {request.url}")
+    print(f"Headers: {dict(request.headers)}")
+    print(f"Body: {body.decode(errors='ignore')}")
+    """
+    response = await call_next(request)
+    return response
 
 
 @app.get("/health")
