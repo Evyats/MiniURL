@@ -1,8 +1,6 @@
-
 open in each vscode one repo at a time - opened on the correct interpreter and venv.
 
 docker versions - prefer always locking the version.
-
 
 use db credentials always: MONGO_INITDB_ROOT_USERNAME / PASSWORD
 
@@ -11,7 +9,6 @@ never git a database - always git ignore it.
 db client - create only when needed (get function for each part).
 
 use env vars for: ttl, db credentials, db name, other services ips, env flags.
-
 
 create async functions for all fastapi routes.
 
@@ -26,3 +23,15 @@ input validation in frontend should be thorough to avoid unnecessary requests to
 wrap every micro service inside a docker container.
 
 make a use of logging - to track info and errors.
+
+python private functions - always start with underscore '_'
+
+all python code - inside an app folder, not in the root
+
+config: env file for the vars definitions and values, config.py for the code that reads them and makes them available to the app.
+
+fastapi: add a function for the startup actions such as indexing the db, and shutdown such as closing the db connection.
+
+have a separation between backend naming conventions and frontend objects that consume the backend api.
+
+frontend: have a file for handling all api calls to the backend, splitted to functions.
