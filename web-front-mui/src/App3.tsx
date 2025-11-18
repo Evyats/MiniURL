@@ -3,6 +3,7 @@ import Send from '@mui/icons-material/Send';
 import useBackend from "./hooks/useBackend";
 import { useState } from "react";
 import ResultCard from "./ResultCard";
+import logo from "./assets/MiniUrl.png";
 
 
 export default function App3() {
@@ -13,8 +14,8 @@ export default function App3() {
 
     function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
         event.preventDefault()
-        if(inputValue == ""){
-           setInputError(true)
+        if (inputValue == "") {
+            setInputError(true)
         }
         else {
             send(inputValue)
@@ -24,7 +25,17 @@ export default function App3() {
 
     return (
         <Container maxWidth="sm" >
-            <Paper elevation={2} sx={{ my: 5, p: 2, bgcolor: 'grey.50', borderRadius: 5 }}>
+
+            <Box display="flex" justifyContent="center">
+                <Box
+                    component="img"
+                    src={logo}
+                    alt="MiniURL logo"
+                    sx={{ my: 4, width: 200 }}
+                />
+            </Box>
+
+            <Paper elevation={2} sx={{ p: 2, bgcolor: 'grey.50', borderRadius: 5 }}>
                 <Typography variant="h5" gutterBottom>URL Shortener</Typography>
                 <Typography variant="body2">Please enter a URL you desire to shorten</Typography>
                 <Stack direction="row" sx={{ p: 2 }}>
@@ -50,7 +61,7 @@ export default function App3() {
                 }
             </Paper>
 
-            { short_url && <ResultCard short_url={short_url}></ResultCard> }
+            {short_url && <ResultCard short_url={short_url}></ResultCard>}
 
         </Container>
     )

@@ -1,2 +1,28 @@
 
 open in each vscode one repo at a time - opened on the correct interpreter and venv.
+
+docker versions - prefer always locking the version.
+
+
+use db credentials always: MONGO_INITDB_ROOT_USERNAME / PASSWORD
+
+never git a database - always git ignore it.
+
+db client - create only when needed (get function for each part).
+
+use env vars for: ttl, db credentials, db name, other services ips, env flags.
+
+
+create async functions for all fastapi routes.
+
+add validations to any user input to avoid injections.
+
+use env vars for the ips in the frontend too.
+
+avoid the frontend to do backend stuff such as building the short url - this should be done and returned by the backend.
+
+input validation in frontend should be thorough to avoid unnecessary requests to the backend.
+
+wrap every micro service inside a docker container.
+
+make a use of logging - to track info and errors.
