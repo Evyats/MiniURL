@@ -1,3 +1,5 @@
+<img src="web-front-mui/src/assets/MiniUrl.png" width="320" style="background:white; padding:8px; border-radius:20px;" />
+
 ## Overview
 Local Bitly-style stack:
 - MongoDB (Docker, TTL index on links)
