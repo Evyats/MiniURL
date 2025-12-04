@@ -1,4 +1,4 @@
-<img src="web-front-mui/src/assets/MiniUrl.png" width="320" style="background:white; padding:8px; border-radius:20px;" />
+<img src="web-front-mui/src/assets/MiniUrlWhite.png" />
 
 ## Overview
 Local Bitly-style stack:
